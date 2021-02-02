@@ -8,7 +8,7 @@
 
 :root {
   font-size: 100%/*93.75%*/;
-  --max-size: 800px;
+  --max-size: 850px;
   --primary-bg-color: #023E8A;
   --secondary-bg-color: #0077B6;
   --positive-deg: 3deg;
@@ -35,7 +35,7 @@ hr {
 }
 
 h1, h2, h3 {
-  font-size: 1rem;
+  /*font-size: 1rem;*/
   letter-spacing: 2px;
   text-transform: uppercase;
   font-family: 'Raleway', sans-serif;
@@ -74,7 +74,8 @@ button {
 }
 
 button:focus,
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
 }
 
@@ -86,17 +87,30 @@ nav {
   justify-content: space-between;
   color: #fff;
   width: 100vw;
-  background: rgba(0,0,0,0.88);
+  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
+  transition: 0.2s linear;
+}
+
+nav.active {
+  background: rgba(0,0,0,0.88);
 }
 
 nav h1 {
   margin-left: 1rem;
   font-size: 1rem;
   font-weight: 700;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s linear;
+}
+
+nav.active h1 {
+  opacity: 1;
+  visibility: visible;
 }
 
 nav ul li {
@@ -114,6 +128,7 @@ nav ul li a {
 
 nav ul li a span:first-child {
   margin-right: 0.5rem;
+  font-weight: 600;
 }
 
 
@@ -176,7 +191,7 @@ header::before {
 }
 
 #primary-section .background-box {
-  padding: 3rem 0 6rem;
+  padding: 3rem 0 4rem;
   position: relative;
   z-index: 1;
 }
@@ -219,7 +234,6 @@ header::before {
   display: flex;
 }
 
-
 /* UM LÁ OUTRO CÁ */
 #primary-section .background-box:nth-child(odd) .cards-container {
   flex-direction: row-reverse;
@@ -229,15 +243,22 @@ header::before {
   flex-direction: row;
 }
 
-/* CONTAINER DOS CARDS */
 #primary-section .cards-container img {
-  width: 220px;
-  height: 220px;
+  width: 280px;
+  height: 280px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-/* CONTEÚDO DA SEÇÃO PRIMÁRIA */
+
+/* CONTEÚDO DE TEXTO DOS CARDS */
+#primary-section .cards-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* MARGEM E JUNTANDO O TEXTO À IMAGEM */
 #primary-section .background-box:nth-child(odd) .cards-content {
   margin-right: 20px;
   text-align: right;
@@ -269,6 +290,15 @@ header::before {
   color: #fff;
   letter-spacing: 1px;
   font-weight: 600;
+  align-self: flex-end;
+}
+
+#primary-section .background-box.background-box:nth-child(odd) a {
+  align-self: flex-end;
+}
+
+#primary-section .background-box:nth-child(even) a {
+  align-self: flex-start;
 }
 
 #primary-section .cards-content a span:first-child {
@@ -406,6 +436,7 @@ header::before {
   margin: 3rem auto 0;
 }
 
+
 /* FOOTER */
 footer {
   background-image: url('https://images.wallpaperscraft.com/image/mountains_snow_winter_84608_1920x1080.jpg');
@@ -440,6 +471,7 @@ footer::before {
 .footer-container .contact-title p {
   margin: 1rem 0;
 }
+
 
 /* CONTAINER DO FORM E DO CONTATO */
 .form-social {
@@ -482,6 +514,7 @@ footer::before {
   margin: 1.5rem 0;
 }
 
+
 /* SOCIAIS */
 .socials {
   display: flex;
@@ -521,7 +554,7 @@ footer::before {
 
 .footer-container > p:last-child {
   text-align: center;
-  margin: 2rem 0 0;
+  margin: 3rem 0 0;
 }
 
 .footer-container > p:last-child,
@@ -535,30 +568,32 @@ footer::before {
 
 
 @media(max-width: 800px) {
-  /* UM LÁ OUTRO CÁ */
+  nav ul a span:first-child {
+    display: none;
+  }
+  
+  /* ajustando cards container */
   #primary-section .background-box:nth-child(odd) .cards-container {
     flex-direction: column;
   }
-
+  
   #primary-section .background-box:nth-child(even) .cards-container {
     flex-direction: column;
   }
   
-  #primary-section .cards-container img {
-    display: inline-block;
+  /* redimencionando as imagens dos cards */
+  #primary-section .background-box img {
     width: 240px;
     height: 240px;
-    margin: 0 auto 1rem;
+    display: inline-block;
   }
   
-  /* CONTEÚDO DA SEÇÃO PRIMÁRIA */
-  #primary-section .background-box:nth-child(odd) .cards-content {
-    margin-right: 0;
-    text-align: left;
+  #primary-section .background-box:nth-child(odd) img {
+    margin: 0 0 1.5rem auto;
   }
-
-  #primary-section .background-box:nth-child(even) .cards-content {
-    margin-left: 0;
+  
+  #primary-section .background-box:nth-child(even) img {
+    margin: 0 auto 1.5rem 0;
   }
   
   #secondary-section .places-container {
@@ -586,6 +621,10 @@ footer::before {
   
   .input-field textarea {
     height: 8rem;
+  }
+  
+  .footer-container > p:last-child {
+    text-align: left;
   }
   
   .footer-container > p:last-child br {

@@ -1,9 +1,10 @@
 ## ⚙️ Projeto
-Este é o segundo clone que desenvolvi utilizando HTML e CSS, colocando em prática parte do que já aprendi. Utilizei como base o template <a href="https://html5up.net/solid-state">Solid State</a>, do site <a href="https://html5up.net/">HTML5 UP</a>.
+Esta aplicação é uma reprodução da homepage <a href="https://html5up.net/solid-state">Solid State</a>, por <a href="https://html5up.net/">HTML5 UP</a>.
 
 ## ✈️ Tecnologias
 - HTML
 - CSS
+- JavaScript
 
 ## 🖥️ Resultado
 <div align="center">
