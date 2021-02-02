@@ -1,0 +1,598 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 100%/*93.75%*/;
+  --max-size: 800px;
+  --primary-bg-color: #023E8A;
+  --secondary-bg-color: #0077B6;
+  --positive-deg: 3deg;
+  --negative-deg: -3deg;
+}
+
+body {
+  background-color: #fafafa;
+  position: relative;
+  z-index: -100;
+}
+
+.container {
+  overflow: hidden;
+  position: relative;
+  z-index: -100;
+}
+
+hr {
+  width: 100%;
+  height: 2px;
+  border: 0;
+  background-color: #aaaaaa99;
+}
+
+h1, h2, h3 {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #ccc;
+  border-bottom: 1px dashed #999;
+  font-family: 'Source Sans Pro', sans-serif;
+  cursor: pointer;
+}
+
+p {
+  font-weight: 300;
+  color: #fbfbfb;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+li {
+  color: #aaa;
+}
+
+button {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.8rem 2rem;
+  border: 2px solid #aaaaaa99;
+  border-radius: 8px;
+  background-color: transparent;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  width: 100vw;
+  background: rgba(0,0,0,0.88);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+nav h1 {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  padding: 1rem;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+nav ul li a span:first-child {
+  margin-right: 0.5rem;
+}
+
+
+/* HEADER */
+header {
+  background-image: url('https://images.wallpaperscraft.com/image/mountains_snow_winter_84608_1920x1080.jpg');
+  background-size: cover;
+  padding: 6rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: -2;
+}
+
+/* CONTEÚDO DO HEADER */
+.header-content {
+  width: min(90vw, var(--max-size));
+  margin: 0 auto;
+}
+
+.header-content i {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 2px solid #aaaaaa99;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.header-content h1 {
+  margin: 1rem 0;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.header-content p {
+  margin-top: 1.5rem;
+  letter-spacing: 1px;
+  color: #ccc;
+  text-transform: uppercase;
+}
+
+
+/* SEÇÃO PRIMÁRIA */
+#primary-section {
+  width: 100%;
+}
+
+#primary-section .background-box {
+  padding: 3rem 0 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+#primary-section .background-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: top left;
+  transform: rotate(var(--negative-deg));
+  z-index: -1;
+}
+
+/* BACKGROUND DO ELEMENTO E DO PSEUDO ELEMENTO (IMPAR) */
+#primary-section .background-box:nth-child(odd),
+#primary-section .background-box:nth-child(odd)::before {
+  background-color: var(--primary-bg-color);
+}
+
+/* BACKGROUND DO ELEMENTO E DO PSEUDO ELEMENTO (PAR) */
+#primary-section .background-box:nth-child(even),
+#primary-section .background-box:nth-child(even)::before {
+  background-color: var(--secondary-bg-color);
+}
+
+/* VARIAÇÃO DA INCLINAÇÃO DO PSEUDO ELEMENTO */
+#primary-section .background-box:nth-child(even)::before {
+  transform: rotate(var(--positive-deg));
+  transform-origin: top right;
+}
+
+
+/* CARDS CONTAINER */
+#primary-section .cards-container {
+  width: min(90vw, var(--max-size));
+  margin: 0 auto;
+  display: flex;
+}
+
+
+/* UM LÁ OUTRO CÁ */
+#primary-section .background-box:nth-child(odd) .cards-container {
+  flex-direction: row-reverse;
+}
+
+#primary-section .background-box:nth-child(even) .cards-container {
+  flex-direction: row;
+}
+
+/* CONTAINER DOS CARDS */
+#primary-section .cards-container img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* CONTEÚDO DA SEÇÃO PRIMÁRIA */
+#primary-section .background-box:nth-child(odd) .cards-content {
+  margin-right: 20px;
+  text-align: right;
+}
+
+#primary-section .background-box:nth-child(even) .cards-content {
+  margin-left: 20px;
+}
+
+#primary-section .cards-content h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+#primary-section .cards-content p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #fafafa;
+}
+
+#primary-section .cards-content a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+  border: 0;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+#primary-section .cards-content a span:first-child {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #aaaaaa99;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#primary-section .cards-content a span:first-child i {
+  transform: translateX(10%);
+}
+
+
+/* SECONDARY SECTION */
+#secondary-section {
+  background-color: #222;
+  position: relative;
+  padding: 2rem 0 3rem;
+  z-index: 1;
+}
+
+#secondary-section::before {
+  content: '';
+  position: absolute;
+  background-color: #222;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: top right;
+  transform: rotate(var(--positive-deg));
+  z-index: -1;
+}
+
+#secondary-section::after {
+  background-color: #222;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: bottom right;
+  transform: rotate(var(--negative-deg));
+  z-index: -1;
+}
+
+/* TEXTO DA SEGUNDA SEÇÃO */
+#secondary-section .secondary-title {
+  width: min(90vw, var(--max-size));
+  margin: 0 auto;
+}
+
+.secondary-title h2 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.secondary-title p {
+  margin: 1rem 0 2rem;
+  font-size: 1rem;
+}
+
+/* CONTAINER DOS QUADRADOS */
+#secondary-section .places-container {
+  width: min(90vw, var(--max-size));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.places-container .places {
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #333;
+  box-shadow: 0 5px 8px rgba(0,0,0,0.2);
+}
+
+.places-container .places img {
+  width: 100%;
+}
+
+.places-container .places h3 {
+  margin: 1.5rem 1rem 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.places-container .places hr {
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+}
+
+.places-container .places p {
+  margin: 1rem 1rem 1.5rem;
+  font-size: 1rem;
+}
+
+.places-container .places a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem 1.5rem;
+  border: 0;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.places-container .places a span:first-child {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #aaaaaa99;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.places-container .places a span:first-child i {
+  transform: translateX(10%);
+}
+
+.btn-container {
+  width: min(90vw, var(--max-size));
+  margin: 3rem auto 0;
+}
+
+/* FOOTER */
+footer {
+  background-image: url('https://images.wallpaperscraft.com/image/mountains_snow_winter_84608_1920x1080.jpg');
+  background-size: cover;
+  padding: 6rem 0 4rem;
+  position: relative;
+  z-index: -2;
+}
+
+footer::before {
+  background-color: rgba(0,0,0,0.6);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+
+.footer-container {
+  width: min(90vw, var(--max-size));
+  margin: 0 auto;
+}
+
+.footer-container .contact-title h2 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-container .contact-title p {
+  margin: 1rem 0;
+}
+
+/* CONTAINER DO FORM E DO CONTATO */
+.form-social {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-container,
+.socials-container {
+  width: 45%;
+}
+
+.form-container .input-field label {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: 'Raleway', sans-serif;
+  margin: 1.5rem 0 0.5rem;
+  display: inline-block;
+}
+
+
+.form-container .input-field input,
+.form-container .input-field textarea {
+  display: inline-block;
+  width: 100%;
+  background-color: #99999922;
+  border: 2px solid #aaaaaa99;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+.input-field textarea {
+  height: 16rem;
+}
+
+.form-container button {
+  margin: 1.5rem 0;
+}
+
+/* SOCIAIS */
+.socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.socials li {
+  list-style: none;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  margin-top: 1rem;
+}
+
+.socials li:last-child a {
+  margin-bottom: 2rem;
+}
+
+.socials li a span:first-child {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #aaaaaa99;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials li a span:last-child {
+  border-bottom: 1px dashed #aaaaaa99;
+  display: block;
+}
+
+.footer-container > p:last-child {
+  text-align: center;
+  margin: 2rem 0 0;
+}
+
+.footer-container > p:last-child,
+.footer-container > p:last-child a {
+  color: #aaaaaaaa;
+}
+
+.footer-container > p:last-child br {
+  display: none;
+}
+
+
+@media(max-width: 800px) {
+  /* UM LÁ OUTRO CÁ */
+  #primary-section .background-box:nth-child(odd) .cards-container {
+    flex-direction: column;
+  }
+
+  #primary-section .background-box:nth-child(even) .cards-container {
+    flex-direction: column;
+  }
+  
+  #primary-section .cards-container img {
+    display: inline-block;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto 1rem;
+  }
+  
+  /* CONTEÚDO DA SEÇÃO PRIMÁRIA */
+  #primary-section .background-box:nth-child(odd) .cards-content {
+    margin-right: 0;
+    text-align: left;
+  }
+
+  #primary-section .background-box:nth-child(even) .cards-content {
+    margin-left: 0;
+  }
+  
+  #secondary-section .places-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  footer {
+    background-image: url(https://images.wallpaperscraft.com/image/mountains_snow_winter_84608_800x1200.jpg);
+    background-size: cover;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  .form-social {
+    flex-direction: column;
+  }
+  
+  .form-container,
+  .socials-container {
+    width: 100%;
+  }
+  
+  .input-field textarea {
+    height: 8rem;
+  }
+  
+  .footer-container > p:last-child br {
+    display: block;
+  }
+  
+  .footer-container > p:last-child span {
+    display: none;
+  }
+}
