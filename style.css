@@ -177,6 +177,19 @@ header::before {
   justify-content: center;
   font-size: 1.5rem;
   color: #fff;
+  /* animação up */
+  opacity: 0;
+  transform: translateY(1rem);
+  animation: animationUp ease-out 1s 0.5s forwards;
+}
+
+/* animações */
+.header-content h1,
+.header-content hr,
+.header-content p {
+  transform: translateX(1rem);
+  opacity: 0;
+  animation: animationLeft ease-out 1s forwards; /* precisa vir antes de setar o delay em cada elemento (essa propriedade zera o delay se vir depois sem especificar) */
 }
 
 .header-content h1 {
@@ -185,6 +198,11 @@ header::before {
   font-size: 2rem;
   letter-spacing: 0.25rem;
   font-weight: 600;
+  animation-delay: 1.5s; /* animation delay */
+}
+
+.header-content hr {
+  animation-delay: 1.65s; /* animation delay */
 }
 
 .header-content p {
@@ -193,6 +211,7 @@ header::before {
   color: #fff;
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
+  animation-delay: 1.8s; /* animation delay */
 }
 
 
@@ -605,6 +624,21 @@ footer::before {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* animações */
+@keyframes animationUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animationLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
