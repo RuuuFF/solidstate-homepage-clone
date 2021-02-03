@@ -11,8 +11,8 @@
   --max-size: 850px;
   --primary-bg-color: #023E8A;
   --secondary-bg-color: #0077B6;
-  --positive-deg: 3deg;
-  --negative-deg: -3deg;
+  --positive-deg: 6deg;
+  --negative-deg: -6deg;
 }
 
 body {
@@ -34,9 +34,18 @@ hr {
   background-color: #aaaaaa99;
 }
 
+h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 0.9rem;
+}
+
 h1, h2, h3 {
-  /*font-size: 1rem;*/
-  letter-spacing: 2px;
+  color: #fff;
+  letter-spacing: 0.10rem;
   text-transform: uppercase;
   font-family: 'Raleway', sans-serif;
 }
@@ -46,6 +55,7 @@ a {
   color: #ccc;
   border-bottom: 1px dashed #999;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -136,7 +146,7 @@ nav ul li a span:first-child {
 header {
   background-image: url('https://images.wallpaperscraft.com/image/mountains_snow_winter_84608_1920x1080.jpg');
   background-size: cover;
-  padding: 6rem 0;
+  padding: 8rem 0;
   position: relative;
   z-index: 1;
 }
@@ -171,16 +181,18 @@ header::before {
 }
 
 .header-content h1 {
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  letter-spacing: 0.25rem;
   font-weight: 600;
 }
 
 .header-content p {
   margin-top: 1.5rem;
   letter-spacing: 1px;
-  color: #ccc;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
 }
 
@@ -268,15 +280,8 @@ header::before {
   margin-left: 20px;
 }
 
-#primary-section .cards-content h2 {
-  color: #fff;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
 #primary-section .cards-content p {
   margin-top: 1rem;
-  font-size: 1rem;
   color: #fafafa;
 }
 
@@ -357,12 +362,6 @@ header::before {
   margin: 0 auto;
 }
 
-.secondary-title h2 {
-  color: #fff;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
 .secondary-title p {
   margin: 1rem 0 2rem;
   font-size: 1rem;
@@ -390,8 +389,6 @@ header::before {
 
 .places-container .places h3 {
   margin: 1.5rem 1rem 1rem;
-  color: #fff;
-  font-size: 1.2rem;
 }
 
 .places-container .places hr {
@@ -401,7 +398,6 @@ header::before {
 
 .places-container .places p {
   margin: 1rem 1rem 1.5rem;
-  font-size: 1rem;
 }
 
 .places-container .places a {
@@ -460,12 +456,6 @@ footer::before {
 .footer-container {
   width: min(90vw, var(--max-size));
   margin: 0 auto;
-}
-
-.footer-container .contact-title h2 {
-  color: #fff;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
 }
 
 .footer-container .contact-title p {
@@ -572,6 +562,15 @@ footer::before {
     display: none;
   }
   
+  header {
+    padding: 6.5rem 0;
+  }
+
+  .header-content h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+  }
+  
   /* ajustando cards container */
   #primary-section .background-box:nth-child(odd) .cards-container {
     flex-direction: column;
@@ -583,8 +582,8 @@ footer::before {
   
   /* redimencionando as imagens dos cards */
   #primary-section .background-box img {
-    width: 240px;
-    height: 240px;
+    width: 200px;
+    height: 200px;
     display: inline-block;
   }
   
@@ -634,4 +633,9 @@ footer::before {
   .footer-container > p:last-child span {
     display: none;
   }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  
 }
