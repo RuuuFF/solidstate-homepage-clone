@@ -641,6 +641,38 @@ footer::before {
   }
 }
 
+/* Small devices (portrait tablets and large phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+  :root {
+    --positive-deg: 3deg;
+    --negative-deg: -3deg;
+  }
+
+  .header-content h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+  }
+
+  /* tamanho das imagens */
+  #primary-section .background-box img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .form-social {
+    flex-direction: column;
+  }
+
+  .form-container,
+  .socials-container {
+    width: 100%;
+  }
+
+  .input-field textarea {
+    height: 8rem;
+  }
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   :root {
@@ -710,38 +742,5 @@ footer::before {
   
   .footer-container > p:last-child span {
     display: none;
-  }
-}
-
-
-/* Small devices (portrait tablets and large phones, 768px and down) */
-@media only screen and (max-width: 768px) {
-  :root {
-    --positive-deg: 3deg;
-    --negative-deg: -3deg;
-  }
-  
-  .header-content h1 {
-    font-size: 1.5rem;
-    letter-spacing: 0.15rem;
-  }
-  
-  /* tamanho das imagens */
-  #primary-section .background-box img {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .form-social {
-    flex-direction: column;
-  }
-  
-  .form-container,
-  .socials-container {
-    width: 100%;
-  }
-  
-  .input-field textarea {
-    height: 8rem;
   }
 }
