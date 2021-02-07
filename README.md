@@ -1,5 +1,5 @@
 ## ⚙️ Projeto
-Esta aplicação é uma reprodução da homepage <a href="https://html5up.net/solid-state">Solid State</a>, por <a href="https://html5up.net/">HTML5 UP</a>.
+Esta aplicação é uma reprodução da homepage <a href="https://html5up.net/solid-state">Solid State</a>.
 
 ## ✈️ Tecnologias
 - HTML
