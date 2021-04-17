@@ -9,5 +9,5 @@ Esta aplicação é uma reprodução da homepage <a href="https://html5up.net/so
 ## 🖥️ Resultado
 <div align="center">
   <img alt="Solid State" src="https://i.imgur.com/TRV95WI.png" width="450px"> 
-  <p>Confira o resultado: <a href="https://solidstate-homepage-clone-ruuuff.netlify.app">solidstate-homepage-clone-ruuuff</a></p>
+  <p>Confira o resultado: <a href="https://solidstate-ui-ruuuff.netlify.app">solidstate-homepage-clone-ruuuff</a></p>
 </div>
